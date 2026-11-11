@@ -1,9 +1,5 @@
-// =====================================================================
 //  2D Animated Traffic Management System  (C++ / OpenGL / FreeGLUT)
-//  Features: Mixed Perspective (Top-Down Cars + 2.5D Buildings/Trees),
-//            Windowed Mode (Big Screen 1600x900), Initial Vehicles = 5,
-//            Park Area, Classic Night Lighting.
-// =====================================================================
+
 #include <GL/glut.h>
 #include <cmath>
 #include <cstdio>
