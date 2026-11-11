@@ -10,7 +10,7 @@ The 2D Animated Traffic Management System demonstrates fundamental computer grap
 
 It features a road intersection with multiple traffic directions, animated vehicles, traffic light signals, and an emergency ambulance system.
 
-### ✨ Key Features
+## ✨ Key Features
 
 - **Animated Vehicles:** Cars, buses, trucks, and ambulances move through the road network.
 - **Traffic Signal System:** Simulates traffic lights with red, yellow, and green phases.
@@ -31,7 +31,7 @@ It features a road intersection with multiple traffic directions, animated vehic
 | OpenGL | 2D graphics rendering |
 | FreeGLUT | Window management, keyboard input, and rendering loop |
 | GCC / G++ | C++ compiler |
-| VS Code / Code::Blocks | Development environment |
+| Code::Blocks | Development environment |
 
 ## 📂 Project Structure
 
@@ -39,12 +39,11 @@ It features a road intersection with multiple traffic directions, animated vehic
 2D-Traffic-Management-System/
 │
 ├── main.cpp
-├── traffic.exe
 ├── README.md
 └── ...
 ```
 
-> Keep only the source files and necessary project resources in your repository. You generally do not need to upload the compiled `traffic.exe` file.
+> You generally do not need to upload the compiled `traffic.exe` file to GitHub.
 
 ## ⚙️ Requirements
 
@@ -54,23 +53,14 @@ Before running the project, make sure you have:
 - C++ compiler (GCC/G++)
 - OpenGL
 - FreeGLUT
-- VS Code or Code::Blocks
+- Code::Blocks or VS Code
+- MSYS2 (recommended for installing GCC and FreeGLUT)
 
 ## 🚀 Installation and Setup
 
-### 1. Clone the Repository
+### Method 1: Using Code::Blocks
 
-```bash
-git clone https://github.com/YOUR-USERNAME/2D-Traffic-Management-System.git
-```
-
-### 2. Navigate to the Project Directory
-
-```bash
-cd 2D-Traffic-Management-System
-```
-
-### 3. Install FreeGLUT (MSYS2 UCRT64)
+**Step 1: Install the required libraries**
 
 Open the MSYS2 UCRT64 terminal and execute:
 
@@ -78,21 +68,79 @@ Open the MSYS2 UCRT64 terminal and execute:
 pacman -S --needed mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-freeglut
 ```
 
-### 4. Compile the Project
+**Step 2: Configure the compiler**
 
-Run the following command from the project directory:
+Make sure Code::Blocks is configured to use the MSYS2 UCRT64 GCC compiler.
+
+Compiler directory:
+
+```text
+C:\msys64\ucrt64
+```
+
+**Step 3: Create a new project**
+
+1. Open Code::Blocks.
+2. Select **File → New → Project**.
+3. Choose **Console Application**.
+4. Select **C++**.
+5. Enter your project name and finish the setup.
+
+**Step 4: Add the source file**
+
+Add your `main.cpp` file to the project.
+
+**Step 5: Configure linker settings**
+
+1. Open **Project → Build options**.
+2. Select your project name (not just an individual Debug or Release target).
+3. Open the **Linker settings** tab.
+4. Under **Link libraries**, add the following libraries:
+
+```text
+freeglut
+opengl32
+glu32
+winmm
+gdi32
+```
+
+**Step 6: Build and run**
+
+- Press `Ctrl + F9` to build the project.
+- Press `F9` to build and run the project.
+
+Your traffic simulation window should open.
+
+### Method 2: Using VS Code
+
+**Step 1: Install FreeGLUT**
+
+Open the MSYS2 UCRT64 terminal:
+
+```bash
+pacman -S --needed mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-freeglut
+```
+
+**Step 2: Navigate to your project directory**
+
+```bash
+cd /c/Users/YourUsername/OneDrive/Documents/YourProject
+```
+
+Replace `YourUsername` and `YourProject` with your actual Windows username and project directory.
+
+**Step 3: Compile the project**
 
 ```bash
 g++ -std=c++17 -Wall -Wextra main.cpp -o traffic.exe -lfreeglut -lopengl32 -lglu32 -lwinmm -lgdi32
 ```
 
-### 5. Run the Application
+**Step 4: Run the application**
 
 ```bash
 ./traffic.exe
 ```
-
-The traffic simulation window should open.
 
 ## 🎮 Keyboard Controls
 
@@ -137,6 +185,5 @@ This project demonstrates several fundamental concepts of computer graphics and 
 3. Implement a basic traffic signal management system.
 4. Simulate emergency vehicle priority.
 5. Apply fundamental computer graphics concepts in a practical project.
-
 
 ⭐ If you find this project interesting, consider giving the repository a star!
